@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  app:
+    build: 
+      context: ./golang
+    container_name: chat-go
+    ports:
+      - 18080:8080
+    volumes:
+      - ./go-src:/go/src:cached
+    working_dir: /go/src/app
+    tty: true
+    command: fresh
